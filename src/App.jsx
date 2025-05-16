@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Route, Routes, Navigate } from 'react-router-dom';
 
 import Cart from './Cart';
 import { useDispatch, useSelector } from 'react-redux';
-import Contact from './contact';
+import Contact from './Contact';
 import Orders from './Orders';
 import Home from './Home';
 import PageNotFound from './pageNotFound';
