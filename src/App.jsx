@@ -9,7 +9,7 @@ import Home from './Home';
 import PageNotFound from './PageNotFound';
 import './App.css';
 import { VegProducts } from './VegProducts';
-import { NonVegMenu } from './Nonvegmenu';
+import { NonVegMenu } from './NonVegMenu';
 import { MilkProducts } from './MilkProducts';
 import { Chocolets } from './Chocolets';
 import SignIn from './SignIn';
@@ -79,7 +79,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/veg" element={<div className="first"><VegProducts/></div>} />
-        <Route path="/nonveg" element={<div className="first"><NonVegMenu/></div>} />
+        <Route path="/nonveg" element={<div className="first"><NonVegMenu /></div>} />
         <Route path="/milk" element={<div className="first"><MilkProducts/></div>} />
          <Route path="/Choco" element={<div className="first"><Chocolets/></div>} />
         <Route path="/orders" element={<Orders/>} />
