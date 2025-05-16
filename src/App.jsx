@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Contact from './Contact';
 import Orders from './Orders';
 import Home from './Home';
-import PageNotFound from './pageNotFound';
+import PageNotFound from './PageNotFound';
 import './App.css';
 import { VegProducts } from './VegProducts';
 import { NonVegMenu } from './Nonvegmenu';
