@@ -155,7 +155,7 @@ function Cart( {isLogged}) {
                 <img src={item.img} alt={item.name} className="cart-item-image" />
                 <div className="cart-item-details">
                   <h3>{item.name}</h3>
-                  <p>Price: ₹{item.price}</p>
+                  <b>Price: ₹{item.price}</b>
                   <div className="cart-item-actions">
                     <button onClick={() => dispatch(incCart(item))}>+</button>
                     <span>{item.quantity}</span>

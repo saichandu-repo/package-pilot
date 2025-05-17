@@ -18,8 +18,6 @@ function SignIn() {
           if(isLogged){
             navigate("/home")
           }
-      
-
 
   return (
     <>

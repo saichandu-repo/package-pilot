@@ -83,7 +83,7 @@ function App() {
          <Route path="/Choco" element={<div className="first"><Chocolets/></div>} />
         <Route path="/orders" element={<Orders/>} />
          <Route path="/signin" element={<SignIn />} />
-          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/SignUp" element={<SignUp/>} />
            <Route path="/AboutUs" element={<AboutUs/>} />
         <Route path="/cart" element={
             <Cart isLogged={isAuthenticate}/>

@@ -54,9 +54,9 @@ function Home() {
 
     return (
         <>
-        <h2>Categories</h2>
+       
         <div className="category-scrolls">
-    
+     <h2>Categories</h2>
 
     <div className="scroll-container">
         <div className="scroll-section">
@@ -75,6 +75,7 @@ function Home() {
             <img src="https://th.bing.com/th/id/OIP.Bb8AZ52DF_ObAWbYCR_NNQHaFj?w=600&h=450&rs=1&pid=ImgDetMain" alt="Chocolates" />
             <b>Chocolates</b>
         </div>
+      
        
     </div>
 </div>

@@ -230,7 +230,7 @@ body {
 
 .category-scrolls {
     margin: 20px 0;
-    margin-left: 250px;
+    margin-left: 10px;
 }
 
 .scroll-container {
@@ -245,7 +245,7 @@ body {
     flex: 0 0 auto;
     scroll-snap-align: start;
     text-align: center;
-    width: 160px;
+    
     border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #fff;

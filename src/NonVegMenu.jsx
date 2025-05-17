@@ -15,7 +15,7 @@ export function NonVegMenu() {
           <div key={index} className="product-card">
             <img src={item.img} alt={item.name} />
             <h3>{item.name}</h3>
-            <p>Price: ₹{item.price}</p>
+            <b>Price: ₹{item.price}</b>
             <button onClick={() => dispatch(addToCart(item))}>Add to Cart</button>
           </div>
         ))}
