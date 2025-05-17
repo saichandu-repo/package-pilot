@@ -17,9 +17,9 @@ function Orders() {
   const orderList = allOrders.map((order, index) => (
     <div key={index} className="order-card">
       <div className="order-header">
-         <p><strong>Order Id:</strong> {order.orderId}</p>
-        <p><strong>Order Date:</strong> {order.date}</p>
-        <p><strong>Total Amount:</strong> ₹{order.finalPrice}</p>
+        <strong>Order Id:</strong> {order.orderId}
+       <strong>Order Date:</strong> {order.date}
+        <strong>Total Amount:</strong> ₹{order.finalPrice}
         <button onClick={() => toggleOrderDetails(order.orderId)}>
           {visibleOrderIds.includes(order.orderId) ? 'Hide Details' : 'Show Details'}
         </button>
@@ -44,7 +44,7 @@ function Orders() {
   return (
     <div className="orders-container">
       <h2>All Orders</h2>
-      {allOrders.length === 0 ? <p>No orders found.</p> : orderList}
+      {allOrders.length === 0 ? <p>No orders found.</p> : <><div style={{width:"100%"}}><img src="https://media1.giphy.com/media/hWco3fzBujt2CqaQBB/giphy.gif" width="60px" height="60px"></img></div>{orderList}</>}
     </div>
   );
 }

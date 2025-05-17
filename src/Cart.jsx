@@ -99,7 +99,7 @@ function Cart( {isLogged}) {
     }, 5000);
 
     const templateParams = {
-      order_id: purchaseDetails.orderId,
+      order_id:  purchaseDetails.orderId,
       orders: cartItems.map((item) => ({
         name: item.name,
         image_url: item.img,
@@ -110,6 +110,7 @@ function Cart( {isLogged}) {
         totalAmount: totalPrice,
         discountAmount: discountAmount,
         taxAmount: taxAmount,
+        cuponAmount:couponDiscountAmount,
         finalPrice: finalPrice,
       },
       email: customerMail,

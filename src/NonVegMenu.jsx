@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./store";
 import './Products.css';
 
+
 export function NonVegMenu() {
   const nonveg = useSelector(globalState => globalState.products.nonveg);
   const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 /* Form Container */
-form {
+.form {
   max-width: 400px;
   margin: 50px auto;
   padding: 30px;
@@ -10,10 +10,10 @@ form {
 }
 
 /* Input Fields */
-input[type="text"],
-input[type="password"],
-input[type="tel"],
-input[type="email"] {
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="tel"],
+.form input[type="email"] {
   width: 100%;
   padding: 12px 15px;
   margin: 10px 0;

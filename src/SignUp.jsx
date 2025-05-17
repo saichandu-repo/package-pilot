@@ -3,20 +3,21 @@ import {useForm} from "react-hook-form"
 import { useDispatch } from 'react-redux';
 import { registerUser } from './store';
 import { useNavigate } from 'react-router-dom';
+
 import "./SignUp.css"
-import{toast} from "react-toastify"
+
 function SignUp() {
     const Navigate=useNavigate()
       const dispatch=useDispatch();
       let {register,handleSubmit}=useForm();
       const myfunc=(data)=>{
           dispatch(registerUser(data));
-         toast.success("registered successfully")
+        alert("registered successfully")
          Navigate("/signin")
       }
   return (
     <>
-    <form onSubmit={handleSubmit(myfunc)}>
+    <form className='form' onSubmit={handleSubmit(myfunc)}>
       <h1>Register</h1>
           <input type="text" placeholder='enter username' required {...register("username")}/>
            <input type="password" placeholder='enter password' required {...register("password")}/>

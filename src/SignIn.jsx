@@ -23,7 +23,7 @@ function SignIn() {
 
   return (
     <>
-    <form onSubmit={handleSubmit(myfunc)}>
+    <form  className='form'   onSubmit={handleSubmit(myfunc)}>
         <h1>Login</h1>
         <p id="messege"></p>
           <input type="text" placeholder='enter username' required {...register("username")}/>
@@ -31,6 +31,7 @@ function SignIn() {
              <button type='submit'  >LogIn</button>
              NewUser?<a href="/SignUp">Register..here</a>
     </form>
+
     </>
   )
 }

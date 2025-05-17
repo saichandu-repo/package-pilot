@@ -14,7 +14,6 @@ import { MilkProducts } from './MilkProducts';
 import { Chocolets } from './Chocolets';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-
 import { useInsertionEffect } from 'react';
 import { logOut } from './store';
 import AboutUs from './AboutUs';
