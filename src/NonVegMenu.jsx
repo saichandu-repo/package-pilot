@@ -10,7 +10,7 @@ export function NonVegMenu() {
   return (
     <div className="product-page nonveg-background">
       <h2 className="category-title">🍗 Non-Veg Specials</h2>
-      <div className="product-grid">
+      <div className="first">
         {nonveg.map((item, index) => (
           <div key={index} className="product-card">
             <img src={item.img} alt={item.name} />

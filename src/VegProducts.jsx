@@ -9,7 +9,7 @@ export function VegProducts() {
   return (
     <div className="product-page veg-background">
       <h2 className="category-title">🥦 Fresh Vegetables</h2>
-      <div className="product-grid">
+      <div className="first">
         {veg.map((item, index) => (
           <div key={index} className="product-card">
             <img src={item.img} alt={item.name} />

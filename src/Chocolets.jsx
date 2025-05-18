@@ -9,7 +9,7 @@ export function Chocolets() {
   return (
     <div className="product-page veg-background">
       <h2 className="category-title">Chocolates</h2>
-      <div className="product-grid">
+      <div className="first">
         {choco.map((item, index) => (
           <div key={index} className="product-card">
             <img src={item.img} alt={item.name} />
