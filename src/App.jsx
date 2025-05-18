@@ -77,10 +77,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/veg" element={<div className="first"><VegProducts/></div>} />
-        <Route path="/nonveg" element={<div className="first"><NonVegMenu /></div>} />
-        <Route path="/milk" element={<div className="first"><MilkProducts/></div>} />
-         <Route path="/Choco" element={<div className="first"><Chocolets/></div>} />
+        <Route path="/veg" element={<VegProducts/>} />
+        <Route path="/nonveg" element={<NonVegMenu />} />
+        <Route path="/milk" element={<MilkProducts/>} />
+         <Route path="/Choco" element={<Chocolets/>} />
         <Route path="/orders" element={<Orders/>} />
          <Route path="/signin" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp/>} />
