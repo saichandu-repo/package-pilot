@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { incCart, decCart, removeCartItem, clearCart, addOrder } from './store';
 import './Cart.css'; // Assuming you have a separate CSS file for styling
 
-function Cart( {isLogged}) {
+function Cart( {isLogged,user}) {
   const cuponCodeRef = useRef();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,6 +24,9 @@ function Cart( {isLogged}) {
   const [customerMail, setCustomerMail] = useState('');
   const [message, setMessage] = useState('');
   const [orderPlaced, setOrderPlaced] = useState(false);
+
+ 
+
 
   const DiscountPer = (per) => {
     setApplied(true);
@@ -113,13 +116,13 @@ function Cart( {isLogged}) {
         cuponAmount:couponDiscountAmount,
         finalPrice: finalPrice,
       },
-      email: customerMail,
+      email: user.email,
     };
 
     emailjs
       .send('service_jqmb25s', 'template_4lf415t', templateParams, 'b1zanMyu7UfP7u5sN')
       .then(() => {
-        alert('Successfully sent email');
+        alert(`Successfully sent email to ${user.email}`);
       })
       .catch((error) => {
         alert('Error sending email');
@@ -161,7 +164,7 @@ function Cart( {isLogged}) {
                     <span>{item.quantity}</span>
                     <button onClick={() => dispatch(decCart(item))}>-</button>
                     <button onClick={() => handleRemoveItem(item)}>
-                      <img src="/delete.png" alt="Delete" width="20px" height="20px" />
+                      <img src="https://icon-library.com/images/delete-icon-image/delete-icon-image-18.jpg" alt="remove" style={{height:"20px", width:"20px"}} />
                     </button>
                   </div>
                 </div>
@@ -196,14 +199,14 @@ function Cart( {isLogged}) {
             <hr />
             <h1>Final Price: ₹{finalPrice}</h1>
 
-            <div className="email-section">
+            {/* <div className="email-section">
               <input
                 type="email"
                 placeholder="Enter your email"
                 onChange={(e) => setCustomerMail(e.target.value)}
               />
               <i>*For communication purposes</i>
-            </div>
+            </div> */}
 
             <div className="payment-method">
               <b>Select Payment Method:</b>

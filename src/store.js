@@ -2,6 +2,8 @@ import {configureStore, createSlice} from "@reduxjs/toolkit"
 
      const  savedCart= localStorage.getItem("cart");
      const  localCart=savedCart? JSON.parse(savedCart):[];
+     const savedUserData = JSON.parse(localStorage.getItem("users")) || [];
+     const authData = JSON.parse(localStorage.getItem("auth")) || {};
 const productSlice=createSlice({
      name:"products",
      initialState:{
@@ -491,11 +493,11 @@ const ordersSlice=createSlice({
 })
 const userSlice=createSlice({
      name:"user",
-     initialState:{
-        users:[],
-        isAuthenticate:false,
-        currentUser:null,
-     },
+    initialState: {
+  users: savedUserData,
+  isAuthenticate: authData.isAuthenticate || false,
+  currentUser: authData.currentUser || null
+},
      reducers:{
           registerUser:(state,userInput)=>{
               state.users.push(userInput.payload);
@@ -528,9 +530,15 @@ const store=configureStore({
         user:userSlice.reducer,
        }
 })
-store.subscribe(()=>{
-   const state=store.getState();
-   localStorage.setItem("cart",JSON.stringify(state.cart))
-})
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem("cart", JSON.stringify(state.cart));
+  localStorage.setItem("users", JSON.stringify(state.user.users)); // Only save users list
+  localStorage.setItem("auth", JSON.stringify({
+    isAuthenticate: state.user.isAuthenticate,
+    currentUser: state.user.currentUser
+  }));
+});
+
 export default store;
 

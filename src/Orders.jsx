@@ -12,9 +12,10 @@ function Orders() {
         ? prevState.filter(id => id !== orderId)
         : [...prevState, orderId]
     );
-  };
+   };
+ 
 
-  const orderList = allOrders.map((order, index) => (
+   const orderList =allOrders.map((order, index) => (
     <div key={index} className="order-card">
       <div className="order-header">
         <strong>Order Id:</strong> {order.orderId}

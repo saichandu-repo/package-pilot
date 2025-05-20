@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 
 import Cart from './Cart';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,6 +21,11 @@ import AboutUs from './AboutUs';
 
 
 function App() {
+   const navigate = useNavigate();
+   const handleLogout = () => {
+    dispatch(logOut());
+    navigate('/home');
+  };
    const dispatch=useDispatch();
   const cartCount = useSelector(globalState => globalState.cart);
   const totalItems = cartCount.reduce((total, item) => total + item.quantity, 0);
@@ -28,7 +33,7 @@ function App() {
     let isAuthenticate=useSelector(state=>state.user.isAuthenticate);
       let currentUser =useSelector(state=>state.user.currentUser);
   return (
-    <BrowserRouter>
+    <>
       {/* Header */}
       <header className="header">
         <img
@@ -67,7 +72,7 @@ function App() {
         </Link>
          <Link to="/AboutUs">AboutUs</Link>
           {isAuthenticate? 
-            <div> welcome! {currentUser.username}&nbsp;<button onClick={()=>dispatch(logOut())}>LogOut</button></div>
+            <div> welcome! {currentUser.username}&nbsp;<button onClick={handleLogout}>LogOut</button></div>
             : <Link to={"/signin"}><button >sign_in</button></Link>
           }
 
@@ -86,7 +91,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp/>} />
            <Route path="/AboutUs" element={<AboutUs/>} />
         <Route path="/cart" element={
-            <Cart isLogged={isAuthenticate}/>
+            <Cart isLogged={isAuthenticate} user={currentUser}/>
 
         } />
         <Route path="/contact" element={<Contact />} />
@@ -107,7 +112,7 @@ function App() {
           <p>&copy; {new Date().getFullYear()} PackagePilot. All rights reserved.</p>
         </div>
       </footer>
-    </BrowserRouter>
+    </>
   );
 }
 
