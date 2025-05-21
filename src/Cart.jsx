@@ -25,9 +25,6 @@ function Cart( {isLogged,user}) {
   const [message, setMessage] = useState('');
   const [orderPlaced, setOrderPlaced] = useState(false);
 
- 
-
-
   const DiscountPer = (per) => {
     setApplied(true);
     setDiscount(per);
@@ -86,6 +83,7 @@ function Cart( {isLogged,user}) {
     const purchaseDate = new Date().toLocaleString();
     const orderId = uuidv4();
     const purchaseDetails = {
+      userId:user.email,
       orderId: orderId,
       date: purchaseDate,
       items: [...cartItems],

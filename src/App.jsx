@@ -86,7 +86,7 @@ function App() {
         <Route path="/nonveg" element={<NonVegMenu />} />
         <Route path="/milk" element={<MilkProducts/>} />
          <Route path="/Choco" element={<Chocolets/>} />
-        <Route path="/orders" element={<Orders/>} />
+        <Route path="/orders" element={<Orders user={currentUser}/>} />
          <Route path="/signin" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp/>} />
            <Route path="/AboutUs" element={<AboutUs/>} />

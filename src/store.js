@@ -500,7 +500,16 @@ const userSlice=createSlice({
 },
      reducers:{
           registerUser:(state,userInput)=>{
+            const checkUser=state.users.find(user=>user.email===userInput.payload.email)
+            if(checkUser){
+              // alert("email already registered")
+                document.getElementById("messege").innerHTML="email already exists".fontcolor("red")
+            }else{
+              alert("registered successfully")
               state.users.push(userInput.payload);
+               document.getElementById("login").innerHTML="<span color='black'>Goto ......</span>signin";
+            }
+             
           },
           loginUser:(state,userInput)=>{
               let userFound=state.users.find(user=>user.userName===userInput.payload.userName && user.password===userInput.payload.password)

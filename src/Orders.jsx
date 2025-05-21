@@ -2,8 +2,12 @@ import { useSelector } from 'react-redux';
 import './Order.css'; // Ensure this file contains your styles
 import { useState } from 'react';
 
-function Orders() {
-  const allOrders = useSelector(globalState => globalState.orders);
+function Orders({user}) {
+   const allOrders=useSelector(globalState => globalState.orders)
+  if(user !== null){
+  const allOrders = useSelector(globalState => globalState.orders.filter(order=>order.userId===user.email));
+  }
+ 
   const [visibleOrderIds, setVisibleOrderIds] = useState([]);
 
   const toggleOrderDetails = (orderId) => {
