@@ -3,7 +3,7 @@ import {configureStore, createSlice} from "@reduxjs/toolkit"
      const  savedCart= localStorage.getItem("cart");
      const  localCart=savedCart? JSON.parse(savedCart):[];
      const savedUserData = JSON.parse(localStorage.getItem("users")) || [];
-     const authData = JSON.parse(localStorage.getItem("auth")) || {};
+    //  const authData = JSON.parse(localStorage.getItem("auth")) || {};
 const productSlice=createSlice({
      name:"products",
      initialState:{
@@ -451,17 +451,15 @@ const cartSlice=createSlice({
                  const item=state.find(item=>item.name==inputItem.payload.name)
                  if(item){
                        item.quantity += 1;
-
                  }
                  else{
-      
                     state.push({...inputItem.payload,quantity:1})
                  }
                 },
        incCart:(state,inputItem)=>{
         const item=state.find(item=>item.name==inputItem.payload.name)
         if(item){
-              item.quantity +=1;
+              item.quantity +=1;  
         }
       },
       decCart:(state,inputItem)=>{
@@ -495,8 +493,8 @@ const userSlice=createSlice({
      name:"user",
     initialState: {
   users: savedUserData,
-  isAuthenticate: authData.isAuthenticate || false,
-  currentUser: authData.currentUser || null
+  isAuthenticate:false,
+  currentUser:null
 },
      reducers:{
           registerUser:(state,userInput)=>{
@@ -543,10 +541,10 @@ store.subscribe(() => {
   const state = store.getState();
   localStorage.setItem("cart", JSON.stringify(state.cart));
   localStorage.setItem("users", JSON.stringify(state.user.users)); // Only save users list
-  localStorage.setItem("auth", JSON.stringify({
-    isAuthenticate: state.user.isAuthenticate,
-    currentUser: state.user.currentUser
-  }));
+  // localStorage.setItem("auth", JSON.stringify({
+  //   isAuthenticate: state.user.isAuthenticate,
+  //   currentUser: state.user.currentUser
+  // }));
 });
 
 export default store;

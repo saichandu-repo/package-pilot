@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUser, registerUser } from './store';
 import { useNavigate } from 'react-router-dom';
 import "./SignUp.css"
+
 function SignIn() {
 
     const navigate=useNavigate();
@@ -12,6 +13,7 @@ function SignIn() {
       let {register,handleSubmit}=useForm();
       const myfunc=(data)=>{
           dispatch(loginUser(data));
+         
       }
 
       const isLogged=useSelector(state=>state.user.isAuthenticate)

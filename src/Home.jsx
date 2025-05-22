@@ -61,19 +61,19 @@ function Home() {
     <div className="scroll-container">
         <div className="scroll-section">
             <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="Vegetables" />
-            <b>Vegetables</b>
+         
         </div>
         <div className="scroll-section">
             <img src="https://st2.depositphotos.com/1177973/6542/i/450/depositphotos_65420891-stock-photo-fresh-fish-and-other-seafood.jpg" alt="Non-Veg" />
-            <b>Non-Veg</b>
+  
         </div>
         <div className="scroll-section">
             <img src="https://th.bing.com/th/id/OIP.yRF9SvFyivjybmgClfWw9wHaE8?rs=1&pid=ImgDetMain" alt="Milk Products" />
-            <b>Milk Products</b>
+
         </div>
         <div className="scroll-section">
             <img src="https://th.bing.com/th/id/OIP.Bb8AZ52DF_ObAWbYCR_NNQHaFj?w=600&h=450&rs=1&pid=ImgDetMain" alt="Chocolates" />
-            <b>Chocolates</b>
+
         </div>
      
     </div>
