@@ -28,6 +28,7 @@ function App() {
   };
    const dispatch=useDispatch();
   const cartCount = useSelector(globalState => globalState.cart);
+
   const totalItems = cartCount.reduce((total, item) => total + item.quantity, 0);
   const [showSidebar, setShowSidebar] = useState(false);
     let isAuthenticate=useSelector(state=>state.user.isAuthenticate);
@@ -75,6 +76,11 @@ function App() {
             <div> welcome! {currentUser.username}&nbsp;<button onClick={handleLogout}>LogOut</button></div>
             : <Link to={"/signin"}><button >sign_in</button></Link>
           }
+            <img
+          src="./public/prabhas.jpg"
+          alt="Profile"
+          className="profile-image"
+        />
 
       </nav>
 

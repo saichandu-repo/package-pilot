@@ -10,10 +10,10 @@ function SignIn() {
     const navigate=useNavigate();
     
       const dispatch=useDispatch();
-      let {register,handleSubmit}=useForm();
+      let {register,handleSubmit,reset}=useForm();
       const myfunc=(data)=>{
           dispatch(loginUser(data));
-         
+         reset();
       }
 
       const isLogged=useSelector(state=>state.user.isAuthenticate)
