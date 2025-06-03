@@ -17,9 +17,11 @@ function SignIn() {
       }
 
       const isLogged=useSelector(state=>state.user.isAuthenticate)
-          if(isLogged){
-            navigate("/home")
-          }
+       useEffect(() => {
+    if (isLogged) {
+      navigate('/home');
+    }
+  }, [isLogged, navigate]);
 
   return (
     <>

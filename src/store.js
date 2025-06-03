@@ -2,7 +2,7 @@ import {configureStore, createSlice} from "@reduxjs/toolkit"
 
      const  savedCart= localStorage.getItem("cart");
      const  localCart=savedCart? JSON.parse(savedCart):[];
-     const savedUserData = JSON.parse(localStorage.getItem("users")) || [];
+    //  const savedUserData = JSON.parse(localStorage.getItem("users")) || [];
     //  const authData = JSON.parse(localStorage.getItem("auth")) || {};
 const productSlice=createSlice({
      name:"products",
@@ -492,7 +492,7 @@ const ordersSlice=createSlice({
 const userSlice=createSlice({
      name:"user",
     initialState: {
-  users: savedUserData,
+  users: [],
   isAuthenticate:false,
   currentUser:null
 },
@@ -540,7 +540,7 @@ const store=configureStore({
 store.subscribe(() => {
   const state = store.getState();
   localStorage.setItem("cart", JSON.stringify(state.cart));
-  localStorage.setItem("users", JSON.stringify(state.user.users)); // Only save users list
+  // localStorage.setItem("users", JSON.stringify(state.user.users)); // Only save users list
   // localStorage.setItem("auth", JSON.stringify({
   //   isAuthenticate: state.user.isAuthenticate,
   //   currentUser: state.user.currentUser

@@ -31,6 +31,7 @@ function App() {
 
   const totalItems = cartCount.reduce((total, item) => total + item.quantity, 0);
   const [showSidebar, setShowSidebar] = useState(false);
+   const profile = useSelector(state => state.user.currentUser?.profileImage);
     let isAuthenticate=useSelector(state=>state.user.isAuthenticate);
       let currentUser =useSelector(state=>state.user.currentUser);
   return (
@@ -77,7 +78,7 @@ function App() {
             : <Link to={"/signin"}><button >sign_in</button></Link>
           }
             <img
-          src="./public/prabhas.jpg"
+          src={profile||"https://cdn-icons-png.flaticon.com/512/847/847969.png"}
           alt="Profile"
           className="profile-image"
         />
