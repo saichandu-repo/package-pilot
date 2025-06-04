@@ -1,6 +1,22 @@
+
 .home-container {
     font-family: 'Segoe UI', sans-serif;
+    background-image: url(''); /* Example collage */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}.home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85); /* or use rgba(0,0,0,0.5) for darker overlay */
+    z-index: -1;
 }
+
 
 .hero {
     background-image: url('https://images.unsplash.com/photo-1584270354949-1bc5ef2ecb49');
